@@ -1,0 +1,641 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Bitter', serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container>div {
+    padding: 5vh 5%;
+}
+
+.main-container>div>*,
+form {
+    box-shadow: 1rem 1rem 1rem black;
+}
+
+.main-container .video-block {
+    display: flex;
+    flex-wrap: wrap;
+    background: rgb(184, 177, 177);
+    background-size: cover;
+    padding-bottom: 10vh;
+    margin-bottom: 0;
+    justify-content: space-around;
+}
+
+.video-block .drug-name {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    line-height: 1.2em;
+    margin: auto;
+    border: 6px solid white;
+    background-color: rgb(218, 224, 218);
+}
+
+.video-block .package-info {
+    width: 100%;
+    margin: 2vw 0 4vw;
+    text-align: center;
+    font-size: 1.5em;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+}
+
+.video-block .package-info h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+.video-block video,
+.video-block .offer-button {
+    width: 33%;
+    border: 6px solid white;
+    object-fit: fill;
+}
+
+.video-block .drug-name ul {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-style: italic;
+    font-size: 2em;
+    letter-spacing: 1em;
+}
+
+.video-block .drug-name li {
+    list-style: none;
+    animation: letter-animate 0.25s linear forwards;
+}
+
+.video-block .drug-name li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.video-block .drug-name li:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.video-block .drug-name li:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.video-block .drug-name li:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.video-block .drug-name li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.video-block .drug-name li:nth-child(6) {
+    animation-delay: 1.25s;
+}
+
+.video-block .drug-name li:nth-child(7) {
+    animation-delay: 1.5s;
+}
+
+@keyframes letter-animate {
+    from {
+        color: black;
+        text-shadow: 0 0 0.1em gold;
+    }
+    to {
+        color: gold;
+        text-shadow: 0 0 0.5em gold, 0 0 10px black;
+    }
+}
+
+.video-block .offer-button {
+    font-size: 0.8em;
+    text-align: center;
+    text-decoration: none;
+    height: max-content;
+    padding: 2vw 2vw;
+    width: 30%;
+    background-color: rgb(43, 38, 38);
+    align-self: center;
+}
+
+.video-block .offer-button img {
+    width: 100%;
+    min-height: 20%;
+    display: block;
+    margin: 0 auto;
+}
+
+.video-block .offer-button div {
+    margin: auto;
+    width: 50%;
+    min-height: 1em;
+    background: rgb(92, 241, 221);
+    background: linear-gradient(90deg, rgba(92, 241, 221, 1) 0%, rgba(250, 209, 209, 1) 50%, rgb(122, 121, 121) 100%);
+    color: black;
+    text-shadow: 5px 5px 5px red;
+    letter-spacing: 0.5em;
+    align-self: center;
+    border: 0.1em solid white;
+    border-radius: 0.5em;
+}
+
+.video-block .offer-button div img {
+    width: 30%;
+}
+
+.video-block .offer-button:hover div {
+    background-color: #FFC761;
+    color: white;
+    transform: scale(1.1, 1.1);
+    transition: all 0.5s linear;
+    box-shadow: 0.5em 0.5em 1em white;
+}
+
+.video-block .offer-button:hover img {
+    transform: scale(1.1, 1.1);
+    transition: all 0.5s linear;
+}
+
+.carusel {
+    display: flex;
+    padding-top: 10vh;
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    background: rgb(116, 223, 200);
+    background: linear-gradient(94deg, rgba(116, 223, 200, 1) 23%, rgba(207, 244, 235, 1) 34%, rgba(184, 177, 177, 1) 61%);
+    background-blend-mode: color-dodge;
+    justify-content: space-around;
+}
+
+.carusel h3 {
+    text-align: center;
+    color: black;
+}
+
+.carusel-wrap {
+    position: relative;
+    width: 45%;
+    margin-left: 5%;
+    border: 6px solid white;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.carusel span {
+    color: red;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.carusel .imgs {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: ease 0.5s;
+}
+
+.carusel .imgs>div {
+    position: relative;
+    min-width: 100%;
+    min-height: 30vw;
+    font-size: 0.8em;
+    background-color: whitesmoke;
+    line-height: 1.5em;
+}
+
+.carusel .imgs img {
+    width: 100%;
+    height: 250px;
+}
+
+.carusel .imgs>div p {
+    padding: 0 1vw;
+}
+
+.inactive {
+    display: none;
+}
+
+.carusel__buttons {
+    position: absolute;
+    top: 40%;
+    overflow: auto;
+    font-size: 5em;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    z-index: 1000;
+}
+
+.right-button:hover {
+    transform: translate(-100%, -50%) scale(1.1, 1.1);
+    color: gold;
+    transition: 0.2s linear;
+}
+
+.left-button:hover {
+    transform: translate(0%, -50%) scale(1.1, 1.1);
+    color: gold;
+    transition: 0.2s linear;
+}
+
+.right-button {
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+.left-button {
+    left: 0%;
+    transform: translate(0%, -50%);
+}
+
+.props {
+    width: 40%;
+    float: right;
+    color: white;
+    border: 6px solid white;
+    line-height: 2em;
+    padding: 5%;
+    background: rgb(61, 60, 60);
+}
+
+.props h3 {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    background: rgba(184, 177, 177, 1);
+    padding-top: 3vw;
+    padding-bottom: 20vh;
+    font-family: monospace;
+}
+
+footer h2 {
+    font-size: 2.5em;
+}
+
+form {
+    position: relative;
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    margin: auto;
+    border: 6px solid white;
+    background: rgb(216, 208, 208);
+    justify-content: space-around;
+    font-size: 1.5em;
+    padding: 1em 0;
+}
+
+form * {
+    margin-top: 0em;
+    height: 3em;
+}
+
+form input {
+    justify-self: flex-end;
+    margin-left: 0%;
+}
+
+form label {
+    width: 25%;
+}
+
+form #name,
+form #phone {
+    width: 55%;
+}
+
+form .selects {
+    display: flex;
+    width: 75%;
+    margin-left: 25%;
+    justify-content: flex-end;
+}
+
+form .selects * {
+    align-self: center;
+    width: 45%;
+}
+
+form #form__submit-button {
+    align-self: center;
+    font-size: 2em;
+    color: #0C4D75;
+}
+
+form #form__submit-button:hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.1s linear;
+    box-shadow: 0 0 1rem black;
+    text-shadow: 0 0 0.1em red;
+}
+
+.price {
+    display: flex;
+    width: 50%;
+    min-height: 15vw;
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 2em;
+}
+
+.price span {
+    font-size: 1.2em;
+    color: gold;
+}
+
+.price div {
+    align-self: center;
+}
+
+.price img {
+    width: 40%;
+    height: auto;
+    align-self: center;
+}
+
+form input,
+form select {
+    position: relative;
+    border: 3px solid white;
+    border-radius: 0.8em;
+}
+
+.countdown {
+    position: absolute;
+    bottom: 0;
+    font-size: 1.5em;
+    left: 50%;
+    transform: translate(-50%);
+    line-height: 1.8em;
+}
+
+@media screen and (max-width: 2560px) {
+    body {
+        font-size: 1.2em;
+    }
+    .carusel-wrap {
+        width: 25%;
+    }
+    .carusel .imgs>div {
+        line-height: 1.75em;
+    }
+    .carusel__buttons {
+        top: 34%;
+    }
+}
+
+@media screen and (max-width:1980px) {
+    .carusel-wrap {
+        width: 29%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .video-block .drug-name {
+        width: 80%;
+    }
+    .carusel-wrap {
+        width: 35%;
+        height: 60vw;
+    }
+    .carusel__buttons {
+        top: 33%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .video-block .drug-name {
+        width: 90%;
+    }
+    .video-block video,
+    .video-block .offer-button {
+        width: 45%;
+    }
+    .carusel-wrap {
+        position: relative;
+        width: 45%;
+        height: 89vw;
+    }
+    .carusel__buttons {
+        position: absolute;
+        top: 31%;
+    }
+    form {
+        width: 80%;
+    }
+    .price {
+        margin-bottom: 3.5em;
+    }
+    .props {
+        padding: 1%;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .body {
+        width: 100vw;
+    }
+    .main-container>div {
+        padding: 5vh 0;
+    }
+    .video-block .drug-name {
+        width: 80%;
+        margin: auto;
+        border: 6px solid white;
+    }
+    .video-block .drug-name ul {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        font-style: italic;
+        font-size: 1em;
+        letter-spacing: 1em;
+    }
+    .video-block .package-info {
+        width: 80%;
+        margin: 2vw auto 4vw;
+        text-align: center;
+        font-size: 1em;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-style: oblique;
+    }
+    .video-block video,
+    .video-block .offer-button {
+        width: 80%;
+        border: 6px solid white;
+        object-fit: fill;
+    }
+    .carusel {
+        flex-wrap: wrap;
+    }
+    .carusel-wrap {
+        position: relative;
+        width: 80%;
+        min-height: 99vw;
+        margin-left: 0;
+    }
+    .carusel .imgs img {
+        width: 100%;
+        height: 50vw;
+    }
+    .carusel__buttons {
+        color: black;
+        top: 55%;
+        font-size: 3.5em;
+        cursor: pointer;
+    }
+    .carusel .imgs>div {
+        position: relative;
+        min-width: 100%;
+        min-height: 99vw;
+        font-size: 0.8em;
+        background-color: whitesmoke;
+        line-height: 1.5em;
+    }
+    .carusel .imgs>div p {
+        font-size: 1rem;
+    }
+    .props {
+        width: 80%;
+    }
+    form label {
+        font-size: 1rem;
+        width: 25%;
+    }
+    .price {
+        display: flex;
+        width: 50%;
+        min-height: 25vw;
+        font-size: 1em;
+        align-self: center;
+        justify-self: flex-start;
+    }
+    form #form__submit-button {
+        width: 45%;
+        align-self: center;
+        font-size: 1em;
+    }
+    .countdown {
+        width: 80%;
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .carusel-wrap {
+        width: 90%;
+        min-height: 45em;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .body {
+        width: 100vw;
+    }
+    .main-container>div {
+        padding: 0;
+    }
+    .video-block .drug-name {
+        width: 100%;
+        margin: auto;
+        border: 6px solid white;
+    }
+    .video-block .package-info {
+        width: 95%;
+    }
+    .video-block .drug-name ul {
+        width: 95%;
+        font-size: 1em;
+        letter-spacing: 0.2em;
+    }
+    .video-block video,
+    .video-block .offer-button {
+        width: 95%;
+    }
+    .carusel {
+        flex-wrap: wrap;
+    }
+    .carusel-wrap {
+        min-height: 44em;
+    }
+    .carusel .imgs img {
+        width: 100%;
+        height: 50vw;
+    }
+    .carusel__buttons {
+        top: 29%;
+        font-size: 3rem;
+    }
+    .carusel .imgs>div p {
+        font-size: 1rem;
+    }
+    .props {
+        width: 95%;
+        line-height: 1.5em;
+    }
+    form {
+        width: 95%;
+        font-size: 1.1em;
+    }
+    .price {
+        min-height: 45vw;
+    }
+    form .selects {
+        display: flex;
+        width: 100%;
+        margin-left: 0;
+    }
+    footer {
+        padding-bottom: 2vw;
+    }
+    footer h2 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .video-block .drug-name ul {
+        letter-spacing: 0.1em;
+    }
+    .carusel__buttons {
+        top: 22%;
+        font-size: 3rem;
+    }
+    form {
+        font-size: 1em;
+    }
+    form * {
+        height: 2em;
+    }
+    form label {
+        font-size: 1rem;
+        width: 100%;
+        line-height: 1em;
+    }
+    form #name,
+    form #phone {
+        width: 80%;
+    }
+    form .selects {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    form .selects * {
+        margin-top: 1em;
+        width: 80%;
+    }
+}
